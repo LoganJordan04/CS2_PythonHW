@@ -3,7 +3,6 @@ def main():
     input_file = open("input_queue.txt", "r")
     input_data = input_file.read()
     input_file.close()
-    # Input file data as string list.
     input_packets = input_data.split("\n")
 
     # Queues from input packets, P=Priority, S=Standard, E=Economy.
