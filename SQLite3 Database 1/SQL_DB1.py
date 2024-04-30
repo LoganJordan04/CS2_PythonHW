@@ -1,19 +1,34 @@
 import sqlite3
 
-# Create an SQL School database.
-conn = sqlite3.connect("School.db")
-c = conn.cursor()
 
-# Create a table in School database for students.
-try:
-    c.execute("""CREATE TABLE IF NOT EXISTS students
-                (student_id INTEGER PRIMARY KEY, last_name TEXT, first_name TEXT, street TEXT, city TEXT, state TEXT,
-                zip INTEGER)""")
-except:
-    pass
+def main():
+    # Create an SQL Music database.
+    con = sqlite3.connect("Music.db")
+    c = con.cursor()
 
-# Insert data in students table.
-c.execute("INSERT INTO students VALUES (1, 'Smith', 'John', '123 Main St', 'Springfield', 'IL', 62701)")
-c.execute("INSERT INTO students VALUES (2, 'Jones', 'Jane', '456 Elm St', 'Chicago', 'IL', 60601)")
-c.execute("INSERT INTO students VALUES (3, 'Johnson', 'Jill', '789 Oak St', 'Peoria', 'IL', 61601)")
-conn.commit()
+    # Create a table in Music database for Music_Artists.
+    c.execute("CREATE TABLE IF NOT EXISTS Music_Artists "
+              "(artist TEXT PRIMARY KEY, genre TEXT, number_recordings INTEGER)")
+
+    # Insert data in Music_Artists table.
+    c.execute("INSERT OR REPLACE INTO Music_Artists VALUES ('Miley', 'Rock', 14)")
+    c.execute("INSERT OR REPLACE INTO Music_Artists VALUES ('Dolly', 'Country', 123)")
+    c.execute("INSERT OR REPLACE INTO Music_Artists VALUES ('Eminem', 'HipHop', 98)")
+    c.execute("INSERT OR REPLACE INTO Music_Artists VALUES ('Brittany', 'Rock', 37)")
+    con.commit()
+
+    # Print the Music_Artists rows.
+    for row in c.execute("select * from Music_Artists"):
+        print(row)
+    print()
+
+    # Print the Rock artist rows.
+    for row in c.execute("select * from Music_Artists where genre=:r", {'r': "Rock"}):
+        print(row)
+
+    # Closing the connection.
+    con.close()
+
+
+if __name__ == "__main__":
+    main()
