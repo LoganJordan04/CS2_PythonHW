@@ -3,3 +3,5 @@
 Week 2 - Data Abstractions: Graphic File.
 
 Week 3 - Data Abstractions (Continued): Manipulating Arrays, Queueing.
+
+Week 4 - SQLite3 Database 1
