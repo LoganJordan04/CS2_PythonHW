@@ -1,7 +1,5 @@
 # Computer Science II Python Homework Repository
 
-Week 2 - Data Abstractions: Graphic File.
+**Weeks 2-3 - Data Abstractions:** Graphic File, Manipulating Arrays, Queueing.
 
-Week 3 - Data Abstractions (Continued): Manipulating Arrays, Queueing.
-
-Week 5 - SQLite3 Database 1
+**Weeks 4-6 - Database Systems:** SQLite3 Database.
