@@ -40,48 +40,52 @@ def main():
 
     # Print the Artists rows.
     print("Music Artists")
-    for row in c.execute("select * from Artists"):
+    for row in c.execute("SELECT * FROM Artists"):
         print(row)
 
     # Print the Genres rows.
     print("Genres")
-    for row in c.execute("select * from Genres"):
+    for row in c.execute("SELECT * FROM Genres"):
         print(row)
 
     # Print the Cities rows.
     print("Cities")
-    for row in c.execute("select * from Cities"):
+    for row in c.execute("SELECT * FROM Cities"):
         print(row)
+
+    # # Inner join Artists and Genres.
+    # for row in c.execute("SELECT artist FROM Artists INNER JOIN Genres ON Artists.genre = Genres.genre"):
+    #     print(row)
 
     # Artist query from user input.
     # Checking the input to see if it matches an artist in the table.
     while True:
         artist_input = input("\nWhich Artist would you like to know more about?: ").lower()
-        c.execute(f"SELECT * from Artists WHERE LOWER(artist) = '{artist_input}'")
+        c.execute(f"SELECT * FROM Artists WHERE LOWER(artist) = '{artist_input}'")
         # If the artist is found then get all needed info from DB.
         if c.fetchall():
             # Fetch the artist from Artists.
-            c.execute(f"SELECT artist from Artists WHERE LOWER(artist) = '{artist_input}'")
+            c.execute(f"SELECT artist FROM Artists WHERE LOWER(artist) = '{artist_input}'")
             artist = "".join(map(str, c.fetchone()))
 
             # Fetch the genre from Artists.
-            c.execute(f"SELECT genre from Artists WHERE artist = '{artist}'")
+            c.execute(f"SELECT genre FROM Artists WHERE artist = '{artist}'")
             genre = "".join(map(str, c.fetchone()))
 
             # Fetch the number_recordings from Artists.
-            c.execute(f"SELECT number_recordings from Artists WHERE artist = '{artist}'")
+            c.execute(f"SELECT number_recordings FROM Artists WHERE artist = '{artist}'")
             num_recordings = "".join(map(str, c.fetchone()))
 
             # Check if genre is in Genres table.
-            c.execute(f"SELECT * from Genres WHERE genre = '{genre}'")
+            c.execute(f"SELECT * FROM Genres WHERE genre = '{genre}'")
             # If the genre is found then get all needed info from DB.
             if c.fetchall():
                 # Fetch the city from Genres.
-                c.execute(f"SELECT city from Genres WHERE genre = '{genre}'")
+                c.execute(f"SELECT city FROM Genres WHERE genre = '{genre}'")
                 city = "".join(map(str, c.fetchone()))
 
                 # Fetch the population from Cities.
-                c.execute(f"SELECT population from Cities WHERE city = '{city}'")
+                c.execute(f"SELECT population FROM Cities WHERE city = '{city}'")
                 population = "".join(map(str, c.fetchone()))
 
                 print(f"{genre} artist {artist} has {num_recordings} recordings and is most popular in {city} "
