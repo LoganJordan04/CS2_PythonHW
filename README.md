@@ -4,4 +4,6 @@
 
 **Weeks 4-6 - Database Systems:** SQLite3 Database.
 
+**Week 7 - Networks and the Internet:** Sockets.
+
 **Extra Credit:** Shortest Path.
