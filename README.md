@@ -6,4 +6,6 @@
 
 **Week 7 - Networks and the Internet:** Sockets.
 
+**Week 8 - Web Applications:** Trivia Website.
+
 **Extra Credit:** Shortest Path.
