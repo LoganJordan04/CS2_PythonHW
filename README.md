@@ -6,6 +6,6 @@
 
 **Week 7 - Networks and the Internet:** Sockets.
 
-**Week 8 - Web Applications:** Trivia Website.
+**Week 8 - Web Applications:** [Trivia Website](https://github.com/LoganJordan04/CS2_TriviaWebsite).
 
 **Extra Credit:** Shortest Path.
