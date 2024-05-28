@@ -8,4 +8,6 @@
 
 **Week 8 - Web Applications:** [Trivia Website](https://github.com/LoganJordan04/CS2_TriviaWebsite).
 
+**Week 9 - Web Servers:** Flask Web Server.
+
 **Extra Credit:** Shortest Path.
