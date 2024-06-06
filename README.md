@@ -10,4 +10,6 @@
 
 **Week 9 - Web Servers:** [Flask Web Server](https://github.com/LoganJordan04/CS2_FlaskWebServer).
 
+**Week 10 - AI:** Cargo.
+
 **Extra Credit:** Shortest Path.
